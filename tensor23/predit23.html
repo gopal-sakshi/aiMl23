@@ -1,0 +1,50 @@
+<html>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.8.4/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.5.1/dist/tfjs-vis.umd.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body>
+    <h4>TensorFlow.js</h4>
+    <div id="myPlot" style="width:100%;max-width:700px"></div>
+
+    <script>
+        const xs = tf.tensor([0, 1, 2, 3, 4]);
+        const ys = xs.mul(2).add(5);
+        /*
+            y = 2x + 5
+            we wont give tensor this equation... 
+            we will just give corresponding [x,y] values            [1,7], [2,9], [3,11], satisfying the equation...
+            then, we will ask to find what 'y' will be if 'x' is 8 
+        */
+
+        const model = tf.sequential();          // Linear Regression Model
+        model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+        model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });                  // Specify Loss and Optimizer
+        model.fit(xs, ys, { epochs: 500 }).then(() => { func23() });                // Train the Model and call func23 after model is trained
+
+        function func23() {
+            const xMax = 10;
+            const xArr = [];
+            const yArr = [];
+            for (let x = 0; x <= xMax; x++) {
+                let result = model.predict(tf.tensor([Number(x)]));
+                result.data().then(y => {
+                    xArr.push(x);
+                    yArr.push(Number(y));
+                    if (x == xMax) { plot(xArr, yArr) };
+                });
+            }
+        }
+
+        function plot(xArr, yArr) {
+            const data = [{ x: xArr, y: yArr, mode: "lines", type: "scatter" }];
+            const layout = {
+                xaxis: { range: [0, 10] },
+                yaxis: { range: [0, 20] },
+            };
+            Plotly.newPlot("myPlot", data, layout);
+        }
+    </script>
+</body>
+
+</html>

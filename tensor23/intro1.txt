@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+
+TensorFlow.js
+- JavaScript library
+- main datatype = Tensor (same as multidimensional array)
+- Tensor has following properties
+    dtype       (bool, int32, float32, complex64, string)
+    rank
+    shape       (size of each dimension)
+
+[10,5] ====>    2-dimensional tensor (or) 
+                2-rank tensor
+
+
+================================================================
+
+
+
+# Concepts
+
+Optimizers
+Adadelta        - Implements the Adadelta algorithm.
+Adagrad         - Implements the Adagrad algorithm.
+Adam            - Implements the Adam algorithm.
+Adamax          - Implements the Adamax algorithm.
+Ftrl            - Implements the FTRL algorithm.
+Nadam           - Implements the NAdam algorithm.
+Optimizer       - Base class for Keras optimizers.
+RMSprop         - Implements the RMSprop algorithm.
+SGD             - Stochastic Gradient Descent Optimizer.
+================================================================

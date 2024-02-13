@@ -1,0 +1,31 @@
+pre-trained models
+- these models have been trained by the TensorFlow.js team and wrapped in an easy to use class
+- no need to gather training data yourself
+
+===============================================================================================
+Vision
+- Image classification
+- Object detection
+- Semantic segementation
+
+
+Body
+- simple face detection
+- face landmark detection
+- pose detection
+- body segmentation
+- hand pose detection
+- portrait depth estimation
+
+
+Text
+- natural language question answering
+- text toxicity detection
+- universal sentence encoder
+
+Audio
+- speech command recognition
+
+General
+- KNN classifier
+===============================================================================================
