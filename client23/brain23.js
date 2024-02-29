@@ -10,6 +10,6 @@ network23.train([
 
 // What is the expected output of [1,0]?
 let result23 = network23.run([1, 0]);
-
+console.log('this is result23 ====> ', result23);
 // Display the probability for "zero" and "one"
 document.getElementById("demo23").innerHTML = "one: " + result23["one"] + "<br>" + "zero: " + result23["zero"];

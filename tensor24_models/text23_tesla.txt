@@ -1,4 +1,5 @@
-const input23 = `Nikola Tesla (July 1856 - 7 January 1943) was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC)
+Nikola Tesla (July 1856 – 7 January 1943) was a Serbian-American inventor, electrical engineer, mechanical engineer,
+and futurist who is best known for his contributions to the design of the modern alternating current (AC)
 electricity supply system.
 
 Born and raised in the Austrian Empire, Tesla studied engineering and physics in the 1870s without receiving a
@@ -23,14 +24,5 @@ wireless communication and power transmitter, but ran out of funding before he c
 After Wardenclyffe, Tesla experimented with a series of inventions in the 1910s and 1920s with varying degrees of
 success. Having spent most of his money, Tesla lived in a series of New York hotels, leaving behind unpaid bills.
 He died in New York City in January 1943. Tesla's work fell into relative obscurity following his death, until
-1960, when the General Conference on Weights and Measures named the SI unit of magnetic flux density the tesla in his honor. There has been a resurgence in popular interest in Tesla since the 1990s.`;
-
-qna.load().then(model => {
-    console.log('kaneesam then ayina execute ayindaaa');
-    let question = "where was tesla born";
-    model.findAnswers(question, input23).then(answers => {
-        console.log('Answers: ', answers);
-    });
-});
-
-
+1960, when the General Conference on Weights and Measures named the SI unit of magnetic flux density the tesla in
+his honor. There has been a resurgence in popular interest in Tesla since the 1990s.
